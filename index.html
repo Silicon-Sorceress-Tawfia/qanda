@@ -17,17 +17,29 @@
             <button class="btn" id="yesBtn">Yes</button>
             <button class="btn" id="noBtn">No</button>
         </div>
+    </div>
 
-        <p id="responseMessage" class="responseMessage"></p>
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <p id="responseMessage"></p>
+            <button id="closeModalBtn">Close</button>
+        </div>
     </div>
 
     <script>
         document.getElementById('yesBtn').addEventListener('click', function() {
             document.getElementById('responseMessage').textContent = 'Thanks for your response! You chose Yes.';
+            document.getElementById('modal').style.display = 'block';
         });
 
         document.getElementById('noBtn').addEventListener('click', function() {
             document.getElementById('responseMessage').textContent = 'Thanks for your response! You chose No.';
+            document.getElementById('modal').style.display = 'block';
+        });
+
+        document.getElementById('closeModalBtn').addEventListener('click', function() {
+            document.getElementById('modal').style.display = 'none';
         });
     </script>
 
